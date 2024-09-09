@@ -6,7 +6,7 @@ import { NzIconDirective } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FilterItem } from '@oila/config/typings';
+import { FilterItem } from '@oila/config';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 
 @Component({

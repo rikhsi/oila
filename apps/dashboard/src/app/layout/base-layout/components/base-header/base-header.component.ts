@@ -6,8 +6,8 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
-import { AuthService } from '@oila/config/services';
-import { BreadCrumbComponent } from '@oila/ui/components';
+import { AuthService } from '@oila/config';
+import { BreadCrumbComponent } from '@oila/ui';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
 

@@ -49,7 +49,11 @@ const config: ModuleFederationConfig = {
       sharedConfig: { singleton: true, eager: true },
     },
     {
-      libraryName: '@ng-zorro-antd',
+      libraryName: 'ng-zorro-antd',
+      sharedConfig: { singleton: true, eager: true },
+    },
+    {
+      libraryName: 'ngx-mask',
       sharedConfig: { singleton: true, eager: true },
     },
     {

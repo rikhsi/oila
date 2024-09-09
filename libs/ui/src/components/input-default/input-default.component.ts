@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FunctionType, ValidationOverview } from '@oila/config/typings';
+import { FunctionType, ValidationOverview } from '@oila/config';
 import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';

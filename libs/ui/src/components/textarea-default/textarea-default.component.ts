@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, forwardRef, input, model } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FunctionType, ValidationOverview } from '@oila/config/typings';
+import { FunctionType, ValidationOverview } from '@oila/config';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 

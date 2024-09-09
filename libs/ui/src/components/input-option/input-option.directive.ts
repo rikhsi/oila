@@ -19,7 +19,7 @@ import {
   tap,
 } from 'rxjs';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
-import { FilterItem } from '@oila/config/typings';
+import { FilterItem } from '@oila/config';
 
 @Directive({
   selector: '[uiInputOption]',

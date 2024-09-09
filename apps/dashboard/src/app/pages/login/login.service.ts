@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginForm } from '@dash/typings';
-import {
-  AccountApiService,
-  ResponseDataOfTokenResponseModel,
-} from '@oila/config/api/myoila.admin.api';
-import { AuthService, DeviceDetectorService } from '@oila/config/services';
+import { AuthService, DeviceDetectorService } from '@oila/config';
+import { AccountApiService, ResponseDataOfTokenResponseModel } from 'libs/config/src/api/myoila.admin.api';
 import { filter, Observable, tap } from 'rxjs';
 
 @Injectable()

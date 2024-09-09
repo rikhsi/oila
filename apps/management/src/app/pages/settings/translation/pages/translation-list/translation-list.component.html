@@ -1,0 +1,54 @@
+<ng-container *transloco="let t">
+    <form [formGroup]="filterForm" class="translation-list">
+        <ui-filters
+            [isLoading]="tableLoading()"
+            (submit)="submit$.next()"
+            (reset)="onResetAll()"
+            (resetControl)="onResetControl($event)"
+        >
+            <ng-template #searchFilter>
+                <ui-input-option 
+                    [disabled]="searchForm.disabled"
+                    [uiInputOption]="searchOptions()"
+                    [formGroup]="searchForm">
+                </ui-input-option>
+            </ng-template>
+
+            <ng-template #drawerControls>
+                <ng-container uiOptionStatic="project">
+                    <ui-select-default
+                        #optionStatic
+                        [isTranslate]="true"
+                        [label]="'select.project'"
+                        formControlName="project">
+                    </ui-select-default>
+                </ng-container>
+
+                <ng-container [uiDateRange]="t('created_date')">
+                    <ui-select-date
+                        [autoDisable]="false"
+                        [label]="'select.date_from'"
+                        formControlName="createdDate_from">
+                    </ui-select-date>
+
+                    <ui-select-date
+                        [autoDisable]="false"
+                        [label]="'select.date_to'"
+                        formControlName="createdDate_to">
+                    </ui-select-date>
+                </ng-container>
+            </ng-template>
+        </ui-filters>
+    
+        <ui-table
+            [data]="tableData()"
+            [loading]="tableLoading()"
+            [total]="totalItems()"
+            [columns]="cols()"
+            [actions]="actions()"
+            (tableMetaChange)="metaChange$.next($event)">
+        </ui-table>
+    </form>
+</ng-container>
+
+

@@ -4,7 +4,7 @@ import { RegistrationForm } from '@dash/typings';
 import {
   passwordStrengthValidator,
   confirmPasswordValidator,
-} from '@oila/config/utils';
+} from '@oila/config';
 
 @Injectable()
 export class RegistrationService {

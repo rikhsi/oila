@@ -11,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
-import { LogoComponent } from '@oila/ui/components';
+import { LogoComponent } from '@oila/ui';
 
 @Component({
   selector: 'dash-header',

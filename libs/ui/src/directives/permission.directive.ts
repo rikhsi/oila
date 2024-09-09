@@ -9,9 +9,9 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
-import { AuthService } from '@oila/config/services';
+import { AuthService } from '@oila/config';
 import { distinctUntilChanged, map, tap } from 'rxjs';
-import { doesUserHasPermission } from '@oila/config/utils/permission';
+import { doesUserHasPermission } from '@oila/config';
 
 @Directive({
   selector: '[uiPermission]',

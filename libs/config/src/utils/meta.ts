@@ -1,4 +1,4 @@
-import { ZorroFilterRequest } from '../api/myoila.core.api';
+import { ZorroFilterRequest } from '../api/myoila.admin.api';
 import { REPLACEMENTS } from '../constants';
 import { FormValue } from '../typings';
 

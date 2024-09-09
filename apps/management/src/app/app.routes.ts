@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { MANAGEMENT_ROUTE } from '@oila/config/constants';
+import { MANAGEMENT_ROUTE } from '@oila/config';
 
 export const appRoutes: Route[] = [
   {

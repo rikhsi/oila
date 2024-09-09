@@ -17,14 +17,14 @@ import {
   FilterValue,
   FormBase,
   FormValue,
-} from '@oila/config/typings';
-import { ZorroFilterRequest } from '@oila/config/api/myoila.core.api';
-import { MessageService, QueryParamsService } from '@oila/config/services';
+} from '@oila/config';
+import { MessageService, QueryParamsService } from '@oila/config';
 import { ActivatedRoute } from '@angular/router';
-import { deepEqual, transformMeta } from '@oila/config/utils';
+import { deepEqual, transformMeta } from '@oila/config';
 import { InputOptionDirective } from '../../input-option';
 import { FiltersComponent } from '../../filters/filters.component';
 import { TableActionItem, TableColumn } from './table-base';
+import { ZorroFilterRequest } from 'libs/config/src/api/myoila.core.api';
 
 @Directive()
 export class TableOverview<

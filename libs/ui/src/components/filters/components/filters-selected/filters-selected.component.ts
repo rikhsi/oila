@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, model, output } from '@angular/core
 import { TranslocoDirective } from '@jsverse/transloco';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
-import { FilterItem } from '@oila/config/typings';
+import { FilterItem } from '@oila/config';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 

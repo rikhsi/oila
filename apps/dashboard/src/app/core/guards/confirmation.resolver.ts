@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { ResolveFn, Router } from '@angular/router';
-import { ProfileApiService } from '@oila/config/api/myoila.core.api';
-import { AUTH_QUERY, AUTH_ROUTE, ROOT_ROUTE } from '@oila/config/constants';
+import { AUTH_QUERY, AUTH_ROUTE, ROOT_ROUTE } from '@oila/config';
+import { ProfileApiService } from 'libs/config/src/api/myoila.core.api';
 import { Observable, of, switchMap } from 'rxjs';
 
 export const confirmationResolver: ResolveFn<Observable<boolean>> = ({

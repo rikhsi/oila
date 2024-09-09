@@ -15,7 +15,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
 import { NgTemplateOutlet } from '@angular/common';
 import { DrawerComponent, SelectDefaultComponent, SelectMultipleComponent } from '..';
-import { FilterItem } from '@oila/config/typings';
+import { FilterItem } from '@oila/config';
 import { DateRangeDirective } from '../../directives';
 
 @Component({

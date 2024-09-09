@@ -12,10 +12,10 @@ import { TranslocoDirective } from '@jsverse/transloco';
 import { LoginService } from './login.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { EMPTY, catchError } from 'rxjs';
-import { InputDefaultComponent } from '@oila/ui/components';
+import { InputDefaultComponent } from '@oila/ui';
 import { LoginForm } from '@dash/typings';
-import { MessageService, ValidationService } from '@oila/config/services';
-import { AUTH_ROUTE } from '@oila/config/constants';
+import { MessageService, ValidationService } from '@oila/config';
+import { AUTH_ROUTE } from '@oila/config';
 
 @Component({
   selector: 'dash-login',

@@ -15,8 +15,8 @@ import {
 import { TranslocoDirective } from '@jsverse/transloco';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NgClass } from '@angular/common';
-import { ZorroFilterRequest } from '@oila/config/api/myoila.core.api';
 import { TableActionItem, TableColumn } from './models';
+import { ZorroFilterRequest } from 'libs/config/src/api/myoila.core.api';
 
 @Component({
   selector: 'ui-table',

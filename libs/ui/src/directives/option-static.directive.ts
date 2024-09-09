@@ -6,12 +6,12 @@ import {
   contentChild,
   input,
 } from '@angular/core';
-import { SELECT_ITEM_TOKEN } from '@oila/config/constants';
+import { SELECT_ITEM_TOKEN } from '@oila/config';
 import {
   CustomSelectItem,
   StaticOption,
   StaticOptionComponent,
-} from '@oila/config/typings';
+} from '@oila/config';
 
 @Directive({
   selector: '[uiOptionStatic]',

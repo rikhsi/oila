@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { ERROR_ROUTE, ROOT_ROUTE } from '@oila/config/constants';
-import { AuthService } from '@oila/config/services';
+import { ERROR_ROUTE, ROOT_ROUTE } from '@oila/config';
+import { AuthService } from '@oila/config';
 
 
 export const authGuard: CanActivateFn = () => {

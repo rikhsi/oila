@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import {
-  ResponseDataOfTokenResponseModel,
-  SellerAccountApiService,
-} from '@oila/config/api/myoila.admin.api';
-import { AuthService } from '@oila/config/services';
-import { exactLengthValidator } from '@oila/config/utils';
+import { AuthService } from '@oila/config';
+import { exactLengthValidator } from '@oila/config';
+import { ResponseDataOfTokenResponseModel, SellerAccountApiService } from 'libs/config/src/api/myoila.admin.api';
 import { Observable, filter, tap } from 'rxjs';
 
 @Injectable()

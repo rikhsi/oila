@@ -13,7 +13,7 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { FormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import moment from 'moment';
-import { FunctionType, ValidationOverview } from '@oila/config/typings';
+import { FunctionType, ValidationOverview } from '@oila/config';
 
 @Component({
   selector: 'ui-select-date',

@@ -5,7 +5,7 @@ import {
   exactLengthValidator,
   passwordStrengthValidator,
   confirmPasswordValidator,
-} from '@oila/config/utils';
+} from '@oila/config';
 
 @Injectable()
 export class RecoverService {

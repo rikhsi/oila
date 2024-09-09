@@ -22,8 +22,8 @@
     "baseUrl": ".",
     "paths": {
       "@dash/*": ["apps/dashboard/src/app/*"],
-      "@oila/config/*": ["libs/config/src/*"],
-      "@oila/ui/*": ["libs/ui/src/*"],
+      "@oila/config": ["libs/config/src/index.ts"],
+      "@oila/ui": ["libs/ui/src/index.ts"],
       "management/Routes": [
         "apps/management/src/app/remote-entry/entry.routes.ts"
       ],

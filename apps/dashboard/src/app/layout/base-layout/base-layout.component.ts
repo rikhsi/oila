@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { BaseLayoutService } from './base-layout.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NgClass } from '@angular/common';
-import { LogoComponent } from '@oila/ui/components';
+import { LogoComponent } from '@oila/ui';
 
 @Component({
   selector: 'dash-base-layout',

@@ -8,7 +8,7 @@ import {
   signal,
 } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { CustomSelectItem, FunctionType, ValidationOverview } from '@oila/config/typings';
+import { CustomSelectItem, FunctionType, ValidationOverview } from '@oila/config';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';

@@ -1,6 +1,6 @@
 import { Inject, Pipe, PipeTransform } from '@angular/core';
-import { SELECT_ITEM_TOKEN } from '@oila/config/constants';
-import { StaticOption } from '@oila/config/typings';
+import { SELECT_ITEM_TOKEN } from '@oila/config';
+import { StaticOption } from '@oila/config';
 
 @Pipe({ name: 'staticName', standalone: true })
 export class StaticNamePipe implements PipeTransform {

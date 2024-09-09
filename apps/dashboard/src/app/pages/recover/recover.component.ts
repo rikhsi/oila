@@ -11,14 +11,14 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { TranslocoDirective } from '@jsverse/transloco';
-import { AccountApiService } from '@oila/config/api/myoila.admin.api';
-import { ROOT_ROUTE, AUTH_ROUTE } from '@oila/config/constants';
-import { ValidationService, MessageService } from '@oila/config/services';
-import { COLLAPSE } from '@oila/ui/animations';
-import { InputDefaultComponent } from '@oila/ui/components';
+import { ROOT_ROUTE, AUTH_ROUTE } from '@oila/config';
+import { ValidationService, MessageService } from '@oila/config';
+import { COLLAPSE } from '@oila/ui';
+import { InputDefaultComponent } from '@oila/ui';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { Observable, EMPTY, tap, catchError } from 'rxjs';
 import { RecoverService } from './recover.service';
+import { AccountApiService } from 'libs/config/src/api/myoila.admin.api';
 
 @Component({
   selector: 'dash-recover',

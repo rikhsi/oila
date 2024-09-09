@@ -1,7 +1,6 @@
 import { ApplicationConfig } from '@angular/core';
 import { appRoutes } from './app.routes';
-import { provideCore } from '@oila/config/providers';
-import { API_BASE_URL } from '@oila/config/constants';
+import { API_BASE_URL, provideCore } from '@oila/config';
 import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {

@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
 import { CanActivateChildFn, Router } from '@angular/router';
-import { ERROR_ROUTE, ROOT_ROUTE } from '@oila/config/constants';
-import { AuthService } from '@oila/config/services';
-import { doesUserHasPermission } from '@oila/config/utils';
+import { ERROR_ROUTE, ROOT_ROUTE } from '@oila/config';
+import { AuthService } from '@oila/config';
+import { doesUserHasPermission } from '@oila/config';
 
 export const roleGuard: CanActivateChildFn = ({ data }) => {
   const authService = inject(AuthService);

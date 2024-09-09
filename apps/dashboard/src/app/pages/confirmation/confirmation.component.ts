@@ -21,11 +21,12 @@ import {
 } from 'rxjs';
 import { ConfirmationService } from './confirmation.service';
 import moment from 'moment';
-import { InputDefaultComponent } from '@oila/ui/components';
-import { CapitalizePipe } from '@oila/ui/pipes';
-import { MessageService, TimerService } from '@oila/config/services';
-import { AUTH_QUERY } from '@oila/config/constants';
-import { SellerAccountApiService } from '@oila/config/api/myoila.admin.api';
+import { InputDefaultComponent } from '@oila/ui';
+import { CapitalizePipe } from '@oila/ui';
+import { MessageService, TimerService } from '@oila/config';
+import { AUTH_QUERY } from '@oila/config';
+import { SellerAccountApiService } from 'libs/config/src/api/myoila.admin.api';
+
 
 @Component({
   selector: 'dash-confirmation',

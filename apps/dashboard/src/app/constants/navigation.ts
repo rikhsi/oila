@@ -3,9 +3,9 @@ import {
   MANAGEMENT_ROUTE,
   MG_SETTINGS_ROUTE,
   ROOT_ROUTE,
-} from '@oila/config/constants';
-import { NavigationItem } from '@oila/config/typings';
-import { routeBuilder } from '@oila/config/utils';
+} from '@oila/config';
+import { NavigationItem } from '@oila/config';
+import { routeBuilder } from '@oila/config';
 
 export const NAVIGATION: NavigationItem[] = buildNavigation([
   {

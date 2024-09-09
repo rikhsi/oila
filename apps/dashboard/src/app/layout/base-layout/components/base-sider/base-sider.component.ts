@@ -3,8 +3,8 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NAVIGATION } from '@dash/constants';
 import { TranslocoDirective } from '@jsverse/transloco';
-import { NavigationItem } from '@oila/config/typings';
-import { PermissionDirective } from '@oila/ui/directives';
+import { NavigationItem } from '@oila/config';
+import { PermissionDirective } from '@oila/ui';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 

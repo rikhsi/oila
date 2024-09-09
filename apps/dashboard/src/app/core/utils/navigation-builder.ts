@@ -1,5 +1,5 @@
-import { NavigationItem } from '@oila/config/typings';
-import { routeBuilder } from '@oila/config/utils';
+import { NavigationItem } from '@oila/config';
+import { routeBuilder } from '@oila/config';
 
 export const buildNavigation = (
   items: NavigationItem[],

@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { AuthService } from '@oila/config/services';
-import { redirectByRole } from '@oila/config/utils';
+import { AuthService } from '@oila/config';
+import { redirectByRole } from '@oila/config';
 
 export const signInGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
