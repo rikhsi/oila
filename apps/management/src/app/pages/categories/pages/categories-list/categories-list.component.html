@@ -1,0 +1,22 @@
+<button (click)="navigatetToAddForm()" class="add-btn" nz-button nzType="primary">
+  {{ 'add_category' | transloco }}
+</button>
+
+<ng-container *transloco="let t">
+  <ui-filters>
+    <ng-template #searchFilter>
+      <ui-input-option [disabled]="searchForm.disabled" [uiInputOption]="searchOptions()" [formGroup]="searchForm">
+      </ui-input-option>
+    </ng-template>
+  </ui-filters>
+
+  <ui-table
+    [data]="tableData()"
+    [loading]="tableLoading()"
+    [total]="totalItems()"
+    [columns]="cols()"
+    [actions]="actions()"
+    (edit)="editCategory($event)"
+    (tableMetaChange)="metaChange$.next($event)"
+  ></ui-table>
+</ng-container>

@@ -1,0 +1,40 @@
+<div class="category-form-wrapper">
+  <h1 class="title">{{ 'category_form_title' | transloco }}</h1>
+  <ui-breadcrumb></ui-breadcrumb>
+  <form class="categoryForm" [formGroup]="categoryForm">
+    <div class="category-translation">
+      <h2 class="subtitle">{{ 'enter_category_translation' | transloco }}</h2>
+      <ui-translations-input formControlName="translations"></ui-translations-input>
+    </div>
+
+    <div class="options" formArrayName="options">
+      <ng-container *ngFor="let optionControl of optionsFormArray.controls; let i = index; let last = last">
+        <div class="option" [formGroupName]="i">
+          <div class="top">
+            <button (click)="deleteOption(i)" nz-button nzType="primary">
+              <span nz-icon nzType="minus-circle" nzTheme="outline"></span>
+            </button>
+          </div>
+          <div class="option-details">
+            <label nz-checkbox formControlName="isCharacteristics">{{ 'is_charecteristics' | transloco }}</label>
+            <label nz-checkbox formControlName="isRequired">{{ 'is_required' | transloco }}</label>
+            <ui-select-default
+              [options]="selectableOptions()"
+              formControlName="optionId"
+              label="choose_option"
+            ></ui-select-default>
+          </div>
+        </div>
+        <nz-divider *ngIf="!last"></nz-divider>
+      </ng-container>
+    </div>
+    <button class="add-term-btn" nz-button nzType="primary" type="button" (click)="addOption()">
+      <span nz-icon nzType="plus"></span>
+      {{ 'add_term' | transloco }}
+    </button>
+
+    <button [disabled]="categoryForm.invalid" (click)="save()" class="save-btn" nz-button nzType="primary">
+      {{ 'save' | transloco }}
+    </button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<ng-container *transloco="let t">
+  <button (click)="navigatetToAddForm()" class="add-btn" nz-button nzType="primary">
+    {{ 'add_option' | transloco }}
+  </button>
+  <form [formGroup]="filterForm" class="option-list-filters">
+    <ui-filters>
+      <ng-template #searchFilter>
+        <ui-input-option [disabled]="searchForm.disabled" [uiInputOption]="searchOptions()" [formGroup]="searchForm">
+        </ui-input-option> </ng-template
+    ></ui-filters>
+  </form>
+
+  <ui-table
+    [data]="tableData()"
+    [loading]="tableLoading()"
+    [total]="totalItems()"
+    [columns]="cols()"
+    (open)="editOption($event)"
+    [actions]="actions()"
+    (tableMetaChange)="metaChange$.next($event)"
+  ></ui-table>
+</ng-container>

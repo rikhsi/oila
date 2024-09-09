@@ -1,0 +1,42 @@
+<div class="option-form-wrapper">
+  <h1 class="title">{{ 'option_form_title' | transloco }}</h1>
+
+  <form class="optionForm" [formGroup]="optionForm">
+    <div class="option-translation">
+      <h2 class="subtitle">{{ 'enter_option_translation' | transloco }}</h2>
+      <ui-translations-input formControlName="translations"></ui-translations-input>
+    </div>
+
+    <div class="terms" formArrayName="terms">
+      @for(termControl of optionTermsFormArray.controls;track termControl; let i=$index;let last=$last){
+      <div class="term" [formGroupName]="i">
+        <div class="top">
+          <h3 class="term__title">{{ 'term' | transloco }} {{ i + 1 }}</h3>
+          <button (click)="deleteTerm(i)" nz-button nzType="primary">
+            <span nz-icon nzType="minus-circle" nzTheme="outline"></span>
+          </button>
+        </div>
+        <div class="term-details">
+          <ui-translations-input formControlName="translations"></ui-translations-input>
+          <ui-input-default type="number" label="order" formControlName="order"></ui-input-default>
+          <ui-input-default label="addititonal" formControlName="additional"></ui-input-default>
+        </div>
+      </div>
+      @if(!last){
+      <nz-divider></nz-divider>
+
+      } }
+    </div>
+    <button class="add-term-btn" nz-button nzType="primary" type="button" (click)="addTerm()">
+      <span nz-icon nzType="plus"></span>
+      {{ 'add_term' | transloco }}
+    </button>
+
+    <ui-select-default label="option_type" formControlName="optionType" [options]="optionsTypes"></ui-select-default>
+    <ui-select-default label="view_type" formControlName="viewType" [options]="viewTypes"></ui-select-default>
+
+    <button [disabled]="optionForm.invalid" (click)="save()" class="save-btn" nz-button nzType="primary">
+      {{ 'save' | transloco }}
+    </button>
+  </form>
+</div>

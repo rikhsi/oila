@@ -1,0 +1,10 @@
+<div class="translations">
+  @for(control of translations.controls;track control.value.langKey; let i=$index){
+  <ng-container [formGroup]="control">
+    <ui-input-default
+      [formControl]="$any(control.get('langValue'))"
+      [label]="'lang' + control.value.langKey"
+    ></ui-input-default>
+  </ng-container>
+  }
+</div>

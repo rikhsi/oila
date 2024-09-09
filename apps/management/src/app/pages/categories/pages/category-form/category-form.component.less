@@ -1,0 +1,58 @@
+.category-form-wrapper {
+  margin: 0 auto;
+
+  .title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .categoryForm {
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+    .category-translation {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: rgb(254, 254, 254);
+
+      .subtitle {
+        font-size: 20px;
+      }
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .option {
+        padding: 20px;
+        background-color: white;
+        .top {
+          display: flex;
+          justify-content: end;
+          align-items: center;
+          .term__title {
+            font-size: 20px;
+          }
+        }
+
+        &-details {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 30px;
+        }
+      }
+    }
+    .add-term-btn {
+      display: block;
+      margin: 10px 10px 10px auto;
+      max-width: 200px;
+    }
+  }
+  .save-btn {
+    display: block;
+    width: 100%;
+  }
+}

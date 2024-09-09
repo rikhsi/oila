@@ -9,3 +9,4 @@ export * from './filters/filters.component';
 export * from './input-option';
 export * from './breadcrumb';
 export * from './table';
+export * from './translations';
