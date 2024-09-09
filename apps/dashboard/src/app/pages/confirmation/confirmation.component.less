@@ -1,0 +1,47 @@
+@import 'colors';
+@import 'mixins';
+
+.confirmation {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    animation: fadeIn 1s ease-in-out;
+
+    .title {
+        text-align: center;
+        .text-mixin(700,32px,auto);
+        margin-bottom: 16px;
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 20px;
+
+        .text-mixin(500,14px,auto);
+    }
+
+    .control {
+        text-align: center;
+    }
+
+    .actions {
+        .text-mixin(500,14px,auto);
+
+        .again {
+            color: @ui-blue-4;
+            margin-bottom: 10px;
+
+            &.disabled {
+                color: fade(@ui-black-1, 50%);
+            }
+        }
+    }
+
+    .available {
+        text-align: center;
+        color: @ui-grey-3;
+
+        .text-mixin(500,14px,auto);
+    }
+}

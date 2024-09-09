@@ -1,15 +1,16 @@
 import { Route } from '@angular/router';
+import { MANAGEMENT_ROUTE } from '@oila/config/constants';
 
 export const appRoutes: Route[] = [
   {
-    path: 'category',
+    path: MANAGEMENT_ROUTE.category,
     loadComponent: () =>
       import('./pages/category/category.component').then(
         (c) => c.CategoryComponent
       ),
   },
   {
-    path: 'settings',
+    path: MANAGEMENT_ROUTE.settings,
     loadChildren: () =>
       import('./pages/settings/settings.routes').then((r) => r.settingsRoute),
   },

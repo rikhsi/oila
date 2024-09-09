@@ -1,0 +1,62 @@
+<ng-container *transloco="let t">
+    <header class="header">
+        <div class="container">
+            <nav class="navigation">
+                <ui-logo [isInfo]="true"></ui-logo>
+    
+                <a 
+                    nz-button 
+                    nzType="text" 
+                    nzSize="small"
+                    routerLink="../conditions"
+                    routerLinkActive="active"
+                >
+                    {{ t('conditions') }}
+                </a>
+        
+                <a 
+                    nz-button 
+                    nzType="text" 
+                    nzSize="small"
+                    routerLink="../support"
+                    routerLinkActive="active"
+                >
+                    {{ t('support') }}
+                </a>
+            </nav>
+        
+            <div class="actions">
+                <button
+                    nz-button
+                    nzType="primary"
+                    nzSize="large"
+                    nz-dropdown 
+                    nzTrigger="click"
+                    [nzDropdownMenu]="menu"
+                    class="language faded"
+                >
+                    {{ currentLang() }}
+
+                    <span nz-icon nzType="down"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul 
+            nz-menu 
+            nzSelectable
+        >
+            @for (lang of availableLangs(); track lang) {
+                <li 
+                    nz-menu-item
+                    [nzSelected]="lang === currentLang()"
+                    (click)="onSelectLang.emit(lang)"
+                >
+                    {{ lang }}
+                </li>
+            }
+        </ul>
+    </nz-dropdown-menu>
+</ng-container>

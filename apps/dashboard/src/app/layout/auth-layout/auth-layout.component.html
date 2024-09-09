@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<div class="auth-layout">
+  <dash-header 
+    (onSelectLang)="onChangeLang($event)">
+  </dash-header>
+
+  <main class="main">
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <dash-footer></dash-footer>
+</div>

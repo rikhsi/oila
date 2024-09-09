@@ -1,0 +1,11 @@
+@switch (column()?.fieldType) {
+    @case ('date') {
+        {{ transformedData()}}
+    }
+    @case ('status') {
+
+    }
+    @default {
+        {{ transformedData() | staticName: column()?.staticConfigName | translation: column()?.isTranslate }}
+    }
+}

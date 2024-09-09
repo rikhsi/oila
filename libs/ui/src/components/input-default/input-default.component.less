@@ -1,0 +1,22 @@
+@import 'colors';
+
+:host {
+    display: block;
+
+    ::ng-deep .ant-form-item-explain {
+        text-align: start;
+    }
+}
+
+[nz-input] {
+    border-radius: 8px !important;
+}
+
+[nz-icon] {
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        color: @ui-pink-1;
+    }
+}

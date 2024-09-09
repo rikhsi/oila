@@ -1,0 +1,29 @@
+@import 'colors';
+@import 'mixins';
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: @ui-white-1;
+    border: 1px solid @ui-grey-2;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .download {
+        background: @ui-yellow-1;
+        border: @ui-yellow-1;
+    }
+}

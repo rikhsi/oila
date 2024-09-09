@@ -1,0 +1,12 @@
+<nz-breadcrumb>
+  @for(breadcrumb of breadcrumbs(); track breadcrumb.label) { 
+    <nz-breadcrumb-item>
+      <a 
+        [routerLink]="breadcrumb.url"
+      >
+        <span nz-icon [nzType]="breadcrumb?.icon"></span>
+        <span>{{ breadcrumb.label | transloco }}</span>
+      </a>
+    </nz-breadcrumb-item>
+  }
+</nz-breadcrumb>

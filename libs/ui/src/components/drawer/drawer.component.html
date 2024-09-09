@@ -1,0 +1,57 @@
+<nz-drawer
+  [nzClosable]="false"
+  [(nzVisible)]="isVisible"
+  [nzWidth]="width()"
+  [nzPlacement]="placement()"
+  (nzOnClose)="closeDrawer()"
+  [nzTitle]="null"
+  [nzFooter]="null"
+>
+  <ng-container *nzDrawerContent>
+    <ng-container *transloco="let t">
+      <div class="drawer">
+        @if(showTitle()){
+        <div class="top">
+          <button nz-button nzType="primary" nzSize="large" [nzBlock]="true" (click)="closeDrawer()" class="back">
+            <span nz-icon nzType="arrow-left"></span>
+
+            {{ t(title()) }}
+
+            <span></span>
+          </button>
+        </div>
+        }
+
+        <div class="content">
+          <ng-content></ng-content>
+        </div>
+
+        @if (!hideActions()) {
+        <div class="actions">
+          <button
+            nz-button
+            nzType="primary"
+            nzSize="large"
+            [nzLoading]="disabled()"
+            [nzBlock]="true"
+            (click)="onSubmit.emit()"
+          >
+            {{ t('filter.save') }}
+          </button>
+
+          <button
+            nz-button
+            nzType="default"
+            nzSize="large"
+            [disabled]="disabled()"
+            [nzBlock]="true"
+            (click)="onReset.emit()"
+          >
+            {{ t('reset') }}
+          </button>
+        </div>
+        }
+      </div>
+    </ng-container>
+  </ng-container>
+</nz-drawer>

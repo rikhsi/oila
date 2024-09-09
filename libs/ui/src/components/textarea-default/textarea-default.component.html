@@ -1,0 +1,37 @@
+<nz-form-item >
+    @if (label()) {
+        <nz-form-label
+            [nzLabelAlign]="'left'"
+            [nzXs]="24"
+            [nzRequired]="required()" 
+            [nzFor]="label()"
+            [nzNoColon]="true"
+        >
+            {{label()}}
+        </nz-form-label>
+    }
+    <nz-form-control 
+        [nzHasFeedback]="isFeedback()"
+        [nzValidateStatus]="status()"
+        [nzErrorTip]="message()"
+        [nzValidatingTip]="message()"
+        [nzWarningTip]="message()"
+        [nzSuccessTip]="message()"
+        class="textarea"
+    >
+        <nz-textarea-count 
+            [nzMaxCharacterCount]="maxCount()"
+        >
+            <textarea 
+                rows="4" 
+                nz-input 
+                [placeholder]="placeholder()"
+                [readOnly]="readonly()"
+                [id]="label()"
+                [autocomplete]="autocomplete()"
+                [(ngModel)]="value"
+                (ngModelChange)="onModelChange($event)">
+            </textarea>
+        </nz-textarea-count>
+    </nz-form-control>
+</nz-form-item>

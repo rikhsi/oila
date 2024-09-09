@@ -1,0 +1,55 @@
+<ng-container *transloco="let t">
+    <nz-ribbon 
+        [nzText]="t(selectedItem()?.label)"
+        class="ribbon"
+    >
+        <ui-input-default 
+            nz-dropdown 
+            [(value)]="value"
+            [label]="t('input.search')"
+            [suffix]="iconRef"
+            [placeholder]="t('placeholder.typing')"
+            [nzTrigger]="null"
+            [nzClickHide]="false"
+            [nzDropdownMenu]="menu"
+            [(blocked)]="disabled"
+            [(nzVisible)]="isDropdown">
+        </ui-input-default>
+    </nz-ribbon>
+
+    <ng-template #iconRef>
+        <button
+            nz-button
+            nzType="link"
+            nzSize="small"
+            [disabled]="disabled()"
+        >
+            <span 
+                nz-icon 
+                nzType="filter"
+                (click)="isDropdown.set(true)">
+            </span>
+        </button>
+    </ng-template>
+
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <nz-radio-group 
+            [(ngModel)]="selectedOption"
+            class="group"
+        >
+            <ul nz-menu>
+                @for (option of searchOptions(); track option.controlName) {
+                    <li nz-menu-item>
+                        <label 
+                            nz-radio 
+                            [nzValue]="option.controlName" 
+                            class="label"
+                        >
+                            {{t(option.label)}}
+                        </label>
+                    </li>
+                }
+            </ul>    
+        </nz-radio-group>
+    </nz-dropdown-menu>
+</ng-container>

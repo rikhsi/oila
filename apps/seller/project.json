@@ -20,9 +20,22 @@
           {
             "glob": "**/*",
             "input": "apps/seller/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+            "output": "/assets/"
           }
         ],
         "styles": ["apps/seller/src/styles.less"],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs/ui/src/assets/styles"
+          ]
+        },
+        "allowedCommonJsDependencies": [
+          "moment"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/seller/webpack.config.ts"
@@ -62,7 +75,8 @@
       "executor": "@nx/angular:dev-server",
       "options": {
         "port": 5200,
-        "publicHost": "http://localhost:5200"
+        "publicHost": "http://localhost:5200",
+        "proxyConfig": "proxy.conf.json"
       },
       "configurations": {
         "production": {

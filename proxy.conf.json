@@ -1,0 +1,8 @@
+{
+    "/api/": {
+        "target": "http://myoila.uz",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

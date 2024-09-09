@@ -1,0 +1,58 @@
+<ng-container *transloco="let t">
+  <div class="footer">
+      @if (!loading()) {
+        <p class="total"> 
+          <strong>{{t('total')}}:</strong>
+          
+          {{total()}}  
+        </p>
+  
+        <div class="info">
+              <nz-pagination 
+                  [nzTotal]="total()"
+                  [(nzPageSize)]="pageSize"
+                  [(nzPageIndex)]="pageIndex"
+                  [nzSize]="'default'">
+              </nz-pagination>
+  
+              <button 
+                  nz-button
+                  nz-dropdown 
+                  [nzDropdownMenu]="menu"
+                  [nzTrigger]="'click'"
+                  class="size"
+              >
+                {{pageSize()}}
+  
+                <span nz-icon nzType="down"></span>
+              </button>
+        </div>
+      } @else {
+        <nz-skeleton-element
+          nzType="button"
+          [nzActive]="true"
+          class="skeleton">
+        </nz-skeleton-element>
+
+        <nz-skeleton-element
+          nzType="input"
+          [nzActive]="true"
+          class="skeleton input">
+        </nz-skeleton-element>
+      }
+  </div>
+</ng-container>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu nzSelectable>
+    @for (option of pageSizeOption(); track option) {
+      <li 
+        nz-menu-item
+        [nzSelected]="option === pageSize()"
+        (click)="changePageSize(option)"
+      >
+        {{option}}
+      </li>
+    }
+  </ul>
+</nz-dropdown-menu>

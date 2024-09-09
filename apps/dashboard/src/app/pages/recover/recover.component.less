@@ -1,0 +1,40 @@
+@import 'colors';
+@import 'mixins';
+
+.recover {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-in-out;
+
+    .title {
+        .text-mixin(700,32px,auto);
+        margin-bottom: 16px;
+    }
+
+    .subtitle {
+        .text-mixin(500,14px,auto);
+        margin-bottom: 24px;
+    }
+
+    .code {
+        text-align: center;
+    }
+
+    .extra {
+        overflow: hidden;
+    }
+
+    .send {
+        margin-top: 10px;
+    }
+
+    .actions {
+        margin-top: 24px;
+
+        .text-mixin(500,14px,auto);
+
+        .login {
+            color: @ui-blue-4;
+        }
+    }
+}

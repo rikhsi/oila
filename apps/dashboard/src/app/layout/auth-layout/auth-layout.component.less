@@ -1,0 +1,24 @@
+@import 'mixins';
+@import 'colors';
+
+.auth-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  overflow: hidden;
+
+  .main {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: @ui-grey-1;
+
+    .content {
+      width: 500px;
+      padding: 48px;
+      border-radius: 16px;
+      background: @ui-white-1;
+    }
+  }
+}

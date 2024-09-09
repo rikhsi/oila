@@ -1,0 +1,33 @@
+@import 'colors';
+@import 'mixins';
+
+.filters-selected {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+    column-gap: 10px;
+    row-gap: 12px;
+    align-items: center;
+    min-height: 32px;
+
+    .empty {
+        .text-mixin(600,14px, normal);
+        color: @ui-grey-3;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        padding: 4px 8px;
+        background: @ui-grey-4;
+        border: none;
+
+        .text-mixin(600,14px, normal);
+
+        [nz-icon] {
+            position: relative;
+            top: 1px;
+            font-size: 15px;
+        }
+    }
+}

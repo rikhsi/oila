@@ -1,0 +1,51 @@
+<nz-form-item>
+  @if (label()) {
+    <nz-form-label 
+      [nzLabelAlign]="'left'" 
+      [nzXs]="24" 
+      [nzRequired]="required()" 
+      [nzFor]="label()" 
+      [nzNoColon]="true"
+    >
+      {{ label() }}
+    </nz-form-label>
+  }
+
+  <nz-form-control
+    [nzHasFeedback]="isFeedback()"
+    [nzValidateStatus]="status()"
+    [nzErrorTip]="message()"
+    [nzValidatingTip]="message()"
+    [nzWarningTip]="message()"
+    [nzSuccessTip]="message()"
+  >
+    <nz-input-group 
+      [nzSize]="size()" 
+      [nzSuffix]="isPassword() ? passwordRef : suffix()"
+    >
+      <input
+        nz-input
+        [shownMaskExpression]="shownMaskExpression()"
+        [showMaskTyped]="shownMakTyped()"
+        [type]="type()"
+        [mask]="maskFormat()"
+        [disabled]="disabled()"
+        [id]="label()"
+        [readOnly]="readonly()"
+        [(ngModel)]="value"
+        [placeholder]="placeholder()"
+        [autocomplete]="autocomplete()"
+        (ngModelChange)="onModelChange($event)"
+        class="input"
+      />
+    </nz-input-group>
+  </nz-form-control>
+</nz-form-item>
+
+<ng-template #passwordRef>
+  <span 
+    nz-icon 
+    [nzType]="passwordIcon()"
+    (click)="togglePassword()">
+  </span>
+</ng-template>

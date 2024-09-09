@@ -1,0 +1,47 @@
+@import 'colors';
+
+@media-xs: ~'(max-width: 576px)';
+@media-sm: ~'(max-width: 768px)';
+@media-md: ~'(max-width: 992px)';
+@media-lg: ~'(max-width: 1199px)';
+@media-xl: ~'(min-width: 1200px)';
+
+.text-mixin( @fw, @fz, @lh) {
+    font-weight: @fw;
+    font-size: @fz;
+    line-height: @lh;
+}
+
+.media-mixin(@bp,@rules) {
+    @media @bp {@rules();}
+}
+
+.wrapper-mixin() {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container-mixin() {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.scrollbar-mixin() {
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: @ui-pink-1;
+    }
+}
+
+.box() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: @ui-white-1;
+    border: 1px solid @ui-grey-2;
+    padding: 30px;
+    border-radius: 10px;
+}

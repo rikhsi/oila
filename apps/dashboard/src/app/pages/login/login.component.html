@@ -1,1 +1,68 @@
-<p>login works!</p>
+<ng-container *transloco="let t">
+  <form [formGroup]="loginForm" class="login">
+    <h1 class="title">
+      {{ t('login') }}
+    </h1>
+
+    <h2 class="subtitle">
+      {{ t('login.subtitle') }}
+    </h2>
+
+    <ui-input-default
+      placeholder="jack@gmail.com"
+      formControlName="email"
+      autocomplete="email"
+      [label]="t('email')"
+      [control]="loginForm.get('email')"
+    >
+    </ui-input-default>
+
+    <ui-input-default
+      type="password"
+      autocomplete="password"
+      formControlName="password"
+      [placeholder]="t('input.fill')"
+      [label]="t('password')"
+      [isPassword]="true"
+      [control]="loginForm.get('password')">
+    </ui-input-default>
+
+    <div class="forget">
+      <a 
+        nz-button 
+        nzType="link" 
+        nzSize="small" 
+        [disabled]="loginForm.disabled"
+        routerLink="../recover"
+      >
+        {{ t('login.forgot_password') }}
+      </a>
+    </div>
+
+    <button
+      nz-button
+      nzType="primary"
+      nzSize="large"
+      [nzLoading]="loginForm.disabled"
+      (click)="login()"
+    >
+      {{ t('submit') }}
+    </button>
+
+    <p class="actions">
+      {{ t('login.no_account') }}?
+
+      <a
+        nz-button
+        nzType="text"
+        nzSize="small"
+        routerLink="../registration"
+        class="register"
+        [disabled]="loginForm.disabled"
+        (click)="register()"
+      >
+        {{ t('login.register') }}
+      </a>
+    </p>
+  </form>
+</ng-container>

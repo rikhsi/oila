@@ -1,0 +1,31 @@
+@import 'colors';
+
+.filters-action {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+
+    .filter {
+        display: flex;
+        align-items: center;
+        column-gap: 9px;
+
+        [nz-icon] {
+            color: @ui-white-1;
+        }
+    }
+
+    .reset {
+        display: flex;
+        align-items: center;
+        column-gap: 9px;
+        padding: 6px !important;
+        line-height: 100%;
+        color: @ui-pink-1;
+        height: auto;
+
+        &:active {
+            background: fade(@ui-black-1,15%);
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<ng-container *transloco="let t">
+  <nz-table
+    #table
+    [nzBordered]="true"
+    [nzData]="data()"
+    [nzTotal]="total()"
+    [nzFrontPagination]="false"
+    [nzTableLayout]="'fixed'"
+    [nzShowPagination]="false"
+    [nzLoading]="loading()"
+    [nzLoadingDelay]="100"
+    [(nzPageIndex)]="pageIndex"
+    [(nzPageSize)]="pageSize"
+    (nzQueryParams)="onQuearyParams($event)"
+  >
+    <thead>
+      <tr>
+        <th [nzAlign]="'center'" [nzWidth]="'60px'">№</th>
+        @for (column of columns(); track column.field) {
+        <th [nzAlign]="'center'" [nzWidth]="column?.width">
+          {{ t(column.label) }}
+        </th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (data of table.data; track data['id']; let i = $index) {
+      <tr>
+        <td [nzAlign]="'center'">
+          {{ (pageIndex() - 1) * pageSize() + i + 1 }}
+        </td>
+
+        @for (column of columns(); track column.field; let first = $first; let last = $last) {
+        <td [nzAlign]="'center'">
+          <div class="table-field" [ngClass]="{ last: last && actions()?.length > 0 }">
+            <ui-table-field [column]="column" [data]="data" [dateType]="dateType()"> </ui-table-field>
+
+            @if (last && actions()?.length > 0) {
+            <ui-table-action
+              [data]="data"
+              [actions]="actions()"
+              (edit)="edit.emit($event)"
+              (open)="open.emit($event)"
+              (remove)="remove.emit($event)"
+            >
+            </ui-table-action>
+            }
+          </div>
+        </td>
+        }
+      </tr>
+      }
+    </tbody>
+  </nz-table>
+
+  <ui-table-footer
+    [pageSizeOption]="pageSizeOption()"
+    [total]="total()"
+    [loading]="loading()"
+    [(pageSize)]="pageSize"
+    [(pageIndex)]="pageIndex"
+  >
+  </ui-table-footer>
+</ng-container>

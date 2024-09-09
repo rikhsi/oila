@@ -7,31 +7,32 @@ import {
 } from '@dash/pages';
 import { AuthLayoutComponent, BaseLayoutComponent } from '@dash/layout';
 import { loadRemoteModule } from '@nx/angular/mf';
+import { AUTH_ROUTE, ROOT_ROUTE } from '@oila/config/constants';
 
 export const appRoutes: Route[] = [
   {
-    path: 'auth',
+    path: ROOT_ROUTE.auth,
     component: AuthLayoutComponent,
     children: [
       {
-        path: 'login',
+        path: AUTH_ROUTE.login,
         loadComponent: () => LoginComponent,
       },
       {
-        path: 'registration',
+        path: AUTH_ROUTE.registration,
         loadComponent: () => RegistrationComponent,
       },
       {
-        path: 'confirmation',
+        path: AUTH_ROUTE.confirmation,
         loadComponent: () => ConfirmationComponent,
       },
       {
-        path: 'recover',
+        path: AUTH_ROUTE.recover,
         loadComponent: () => RecoverComponent,
       },
       {
         path: '**',
-        redirectTo: 'login',
+        redirectTo: AUTH_ROUTE.login,
       },
     ],
   },
@@ -40,14 +41,14 @@ export const appRoutes: Route[] = [
     component: BaseLayoutComponent,
     children: [
       {
-        path: 'management',
+        path: ROOT_ROUTE.management,
         loadChildren: () =>
           loadRemoteModule('management', './Routes').then(
             (m) => m.remoteRoutes
           ),
       },
       {
-        path: 'seller',
+        path: ROOT_ROUTE.seller,
         loadChildren: () =>
           loadRemoteModule('seller', './Routes').then((m) => m.remoteRoutes),
       },

@@ -1,0 +1,16 @@
+<footer class="footer">
+  <div class="container">
+    <span class="copyright">
+      {{ 'oila.copyright' | transloco }}
+    </span>
+  
+    <a 
+      nz-button
+      nzType="link"
+      [href]="'tel:' + phone"
+      class="phone" 
+    >
+      {{phone}}
+    </a>
+  </div>
+</footer>

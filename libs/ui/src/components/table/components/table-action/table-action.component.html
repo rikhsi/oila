@@ -1,0 +1,68 @@
+<ng-container *transloco="let t">
+    <button 
+        nz-button
+        class="options"
+        nz-popover
+        [nzPopoverTitle]="null"
+        [nzPopoverTrigger]="'click'"
+        nzPopoverPlacement="bottomRight"
+        [nzPopoverContent]="contentTemplate"
+        *uiPermission="actionPermissions()"
+    >
+        <span nz-icon nzType="menu-fold" nzTheme="outline"></span>
+    </button>
+
+    <ng-template #contentTemplate>
+        <div class="popover">
+            @for (action of actions(); track action.actionType) {
+                @switch (action?.actionType) {
+                    @case ('edit') {
+                        <button 
+                            *uiPermission="action?.permissions"
+                            nz-button
+                            nzSize="small" 
+                            nzType="default"
+                            class="edit"
+                            [nzGhost]="true"
+                            (click)="onEdit()"
+                        >
+                            <span nz-icon nzType="edit"></span>
+
+                            {{t('edit')}}
+                        </button>
+                    }
+                    @case ('open') {
+                        <button 
+                            *uiPermission="action?.permissions"
+                            nz-button
+                            nzSize="small" 
+                            nzType="default"
+                            [nzGhost]="true"
+                            (click)="onOpen()"
+                        >
+
+                            <span nz-icon nzType="eye"></span>
+
+                            {{t('open')}}
+                        </button>
+                    }
+                    @case ('remove') {
+                        <button 
+                            *uiPermission="action?.permissions"
+                            nz-button
+                            nzSize="small" 
+                            nzType="default"
+                            [nzGhost]="true"
+                            class="remove"
+                            (click)="onRemove()"
+                        >
+                            <span nz-icon nzType="delete"></span>
+
+                            {{t('remove')}}
+                        </button>   
+                    }
+                }
+            }
+        </div>
+    </ng-template>
+</ng-container>

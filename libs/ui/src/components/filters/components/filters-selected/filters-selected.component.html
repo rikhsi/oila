@@ -1,0 +1,28 @@
+<ng-container *transloco="let t">
+    <div class="filters-selected">
+        @if (!activeFilters()?.length) {
+            <p class="empty">
+                {{t('filter.empty')}}
+            </p>
+        } @else {
+            @for (filter of activeFilters(); track filter.label) {
+                <nz-badge [nzCount]="filter?.counter">
+                    <button 
+                        nz-button
+                        nz-tooltip 
+                        [nzType]="'primary'"
+                        [nzSize]="'default'"
+                        [nzTooltipTitle]="filter.label" 
+                        [nzTooltipColor]="'#ff9090'"
+                        (click)="onReset(filter.controlNames)"
+                        class="item"
+                    >
+                        {{filter.value}}
+
+                        <span nz-icon nzType="close"></span>
+                    </button>
+                </nz-badge>
+            }
+        }
+    </div>
+</ng-container>

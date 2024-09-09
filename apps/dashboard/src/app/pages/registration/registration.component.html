@@ -1,1 +1,74 @@
-<p>registration works!</p>
+<ng-container *transloco="let t">
+  <section class="registration">
+    <form 
+      [formGroup]="registerForm"
+      class="form" 
+    >
+      <h1 class="title">
+        {{ t('register') }}
+      </h1>
+  
+      <h2 class="subtitle">
+        {{ t('register.subtitle') }}
+      </h2>
+  
+      <ui-input-default
+        size="large"
+        formControlName="email"
+        autocomplete="email"
+        [label]="t('email')"
+        [placeholder]="t('jack@gmail.com')"
+        [control]="registerForm.get('email')">
+      </ui-input-default>
+
+      <ui-input-default
+        size="large"
+        formControlName="password"
+        autocomplete="password"
+        type="password"
+        [isPassword]="true"
+        [label]="t('password')"
+        [placeholder]="t('input.fill')"
+        [control]="registerForm.get('password')">
+      </ui-input-default>
+
+      <ui-input-default
+        size="large"
+        type="password"
+        formControlName="confirmationPassword"
+        autocomplete="password"
+        [label]="t('confirm_password')"
+        [isPassword]="true"
+        [placeholder]="t('input.fill')"
+        [control]="registerForm.get('confirmationPassword')">
+      </ui-input-default>
+  
+      <button 
+        nz-button 
+        nzType="primary"
+        nzSize="large"
+        class="register"
+        [nzLoading]="registerForm.disabled"
+        [nzBlock]="true"
+        (click)="register()" 
+      >
+        {{ t('register') }}
+      </button>
+  
+      <p class="actions">
+        {{ t('login.have_account') }}?
+  
+        <a 
+          nz-button
+          nzType="text"
+          nzSize="small"
+          routerLink="../login"
+          class="login" 
+          [disabled]="registerForm.disabled"
+        >
+          {{ t('login') }}
+        </a>
+      </p>
+    </form>
+  </section>  
+</ng-container>

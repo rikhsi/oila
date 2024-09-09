@@ -1,1 +1,84 @@
-<p>recover works!</p>
+<ng-container *transloco="let t">
+  <section 
+    class="recover" 
+    [formGroup]="recoverForm"
+  > 
+    <h1 class="title">
+      {{ t('recover_password.title') }}
+    </h1>
+
+    <h2 class="subtitle">
+      {{ t('recover_password.subtitle') }}
+    </h2>
+    
+    <ui-input-default 
+      placeholder="john@gmail.com" 
+      formControlName="email" 
+      autocomplete="email"
+      [readonly]="isCodeSent()"
+      [control]="recoverForm.get('email')">
+    </ui-input-default>
+
+    @defer ( on timer(0.5s)) {
+      <div [@collapse]="isCodeSent()" class="extra">
+        <ui-input-default
+          formControlName="code"
+          shownMaskExpression="_ _ _ _ _ _"
+          maskFormat="0 0 0 0 0 0"
+          autocomplete="code"
+          [specialMaskCharacters]="['_']"
+          [label]="t('code')"
+          [control]="recoverForm.get('code')"
+          [shownMakTyped]="true"
+          class="code">
+        </ui-input-default>
+  
+        <ui-input-default
+          size="large"
+          formControlName="password"
+          autocomplete="password"
+          [isPassword]="true"
+          [placeholder]="t('input.fill')"
+          [label]="t('new_password')"
+          [control]="recoverForm.get('password')">
+        </ui-input-default>
+  
+        <ui-input-default
+          size="large"
+          formControlName="confirmationPassword"
+          autocomplete="password"
+          [label]="t('confirm_password')"
+          [isPassword]="true"
+          [placeholder]="t('input.fill')"
+          [control]="recoverForm.get('confirmationPassword')">
+        </ui-input-default>
+      </div>
+    }
+
+    <button 
+      nz-button 
+      nzType="primary"
+      nzSize="large"
+      (click)="submit()" 
+      [nzLoading]="recoverForm.disabled" 
+      class="send" 
+    >
+      {{ t(sumbitButtonText()) }}
+    </button>
+
+    <p class="actions">
+      {{ t('to_main_page') }}?
+
+      <a 
+        nz-button
+        nzType="text"
+        nzSize="small"
+        routerLink="../login"
+        class="login" 
+        [disabled]="recoverForm.disabled"
+      >
+        {{ t('login') }}
+      </a>
+    </p>
+  </section>
+</ng-container>

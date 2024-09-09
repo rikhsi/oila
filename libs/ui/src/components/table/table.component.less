@@ -1,0 +1,65 @@
+@import 'mixins';
+
+:host {
+    width: 100%;
+
+    th {
+        font-weight: 600;
+        white-space: normal;
+        vertical-align: middle;
+        overflow-wrap: break-word; 
+    }
+
+    td {
+        font-weight: 500;
+        min-width: 100px;
+        max-width: 140px;
+        vertical-align: middle;
+
+        .table-field {
+            width: 100%;
+            display: flex;
+            align-items: center; 
+            justify-content: center;       
+            flex-wrap: nowrap;
+
+            &.last {
+                justify-content: space-between;
+                column-gap: 8px;
+            }
+        }
+    }
+
+    .order {
+        width: fit-content;
+        padding: 14px;
+        white-space: nowrap;
+    }
+
+    ::ng-deep .ant-spin-spinning {
+        max-height: 500px !important;
+    }
+
+    ::ng-deep .ant-table {
+        &-container {
+            border-left: none !important;
+        }
+
+        table {
+            border-top: none !important;
+        }
+
+        &-row:last-child td {
+            border: none;
+        }
+
+        &-cell:last-child {
+            border-right: none !important;
+        }
+    }
+
+    ::ng-deep .ant-empty-normal {
+        margin: 128px 0;
+    }
+}
+

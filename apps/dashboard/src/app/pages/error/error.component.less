@@ -1,0 +1,17 @@
+@import 'mixins';
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100svh - 110px);
+
+    .media-mixin(@media-sm, {
+        height: 100svh;
+    });
+
+    [nz-result-extra] {
+        display: flex;
+        justify-content: center;
+    }
+}

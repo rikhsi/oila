@@ -1,0 +1,35 @@
+<nz-form-item>
+    @if (label()) {
+        <nz-form-label
+            [nzLabelAlign]="'left'"
+            [nzXs]="24"
+            [nzRequired]="required()" 
+            [nzFor]="label()"
+            [nzNoColon]="true"
+            class="form-label"
+        >
+            {{label()}}
+        </nz-form-label>
+    }
+    <nz-form-control 
+        [nzHasFeedback]="isFeedback()"
+        [nzValidateStatus]="status()"
+        [nzErrorTip]="message()"
+        [nzValidatingTip]="message()"
+        [nzWarningTip]="message()"
+        [nzSuccessTip]="message()"
+    >
+        <nz-date-picker 
+            [nzId]="label()"
+            [nzSize]="'large'"
+            [nzDisabledDate]="nzDisabledDate()"
+            [nzDisabled]="disabled()"
+            [nzFormat]="'dd.MM.yyyy'"
+            [nzPlaceHolder]="placeholder()"
+            [nzShowToday]="false"
+            [(ngModel)]="value"
+            (ngModelChange)="onModelChange()"
+            class="select-date">
+        </nz-date-picker>
+    </nz-form-control>
+</nz-form-item>

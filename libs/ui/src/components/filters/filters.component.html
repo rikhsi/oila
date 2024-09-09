@@ -1,0 +1,45 @@
+<ng-container *transloco="let t">
+    <div class="box">
+        <div class="filters">
+            <ui-filters-action
+                [isDot]="!!activeFilters()?.length"
+                (openDrawer)="isDrawer.set(true)">
+            </ui-filters-action>
+    
+            <ui-filters-selected 
+                [activeFilters]="activeFilters()"
+                (resetControl)="resetControl.emit($event)">
+            </ui-filters-selected>
+        </div>
+
+        <div class="content">
+            <ng-container *ngTemplateOutlet="searchFilter()"></ng-container>
+
+            @if (showReport()) {
+                <button 
+                    nz-button
+                    [nzType]="'primary'"
+                    [nzSize]="'large'"
+                    [nzLoading]="isReportLoading()"
+                    (click)="report.emit()"
+                    class="download"
+                >
+                    {{t('filter.download')}}
+
+                    <span nz-icon nzType="file-excel"></span>
+                </button>
+            }
+        </div>
+    </div>
+
+    <ui-drawer
+        [(isVisible)]="isDrawer"
+        [disabled]="isLoading()"
+        [title]="'filter.name'"
+        [width]="420"
+        (onSubmit)="onSubmit()"
+        (onReset)="reset.emit()"
+    >
+        <ng-container *ngTemplateOutlet="drawerControls()"></ng-container>
+    </ui-drawer>
+</ng-container>

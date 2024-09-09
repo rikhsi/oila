@@ -1,0 +1,40 @@
+<nz-form-item>
+    @if (label()) {
+        <nz-form-label
+            [nzLabelAlign]="'left'"
+            [nzXs]="24"
+            [nzRequired]="required()" 
+            [nzFor]="label()"
+            [nzNoColon]="true"
+        >
+            <span>{{label()}}</span>
+        </nz-form-label>
+    }
+    <nz-form-control 
+        [nzHasFeedback]="isFeedback()"
+        [nzValidateStatus]="status()"
+        [nzErrorTip]="message()"
+        [nzValidatingTip]="message()"
+        [nzWarningTip]="message()"
+        [nzSuccessTip]="message()"
+    >
+        <nz-select 
+            [nzSize]="'large'"
+            [nzId]="label()"
+            [(ngModel)]="value"
+            [nzShowSearch]="true"
+            [nzMode]="'multiple'"
+            [nzMaxTagCount]="counter()"
+            (ngModelChange)="onModelChange($event)"
+            [nzPlaceHolder]="'input.choose' | transloco"
+            [disabled]="disabled() || !options()?.length"
+        >
+            @for (option of options(); track option.value) {
+                <nz-option 
+                    [nzValue]="option.value" 
+                    [nzLabel]="option.label">
+                </nz-option>
+            }
+        </nz-select>
+    </nz-form-control>
+</nz-form-item>

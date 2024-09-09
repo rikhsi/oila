@@ -1,1 +1,46 @@
-<p>confirmation works!</p>
+<ng-container *transloco="let t">
+  <section class="confirmation">
+    <h1 class="title">
+      {{ t('enter_code') }}
+    </h1>
+
+    <h2 class="subtitle">
+      {{ t('code_sent_to_email') }}
+    </h2>
+
+    <ui-input-default
+      class="control"
+      shownMaskExpression="_ _ _ _ _ _"
+      maskFormat="0 0 0 0 0 0"
+      [formControl]="codeControl"
+      [specialMaskCharacters]="['_']"
+      [shownMakTyped]="true"
+    >
+    </ui-input-default>
+
+    <div class="info">
+      <p class="actions">
+        {{ t('message_not_come') }}?
+
+        <a
+          nz-button
+          nzType="text"
+          nzSize="small"
+          class="again"
+          [disabled]="sendAgainEnabled()"
+          (click)="resendActivationCode()"
+        >
+          {{ t('send_again') }}
+        </a>
+      </p>
+
+      @if (sendAgainEnabled()) {
+      <p class="available">
+        ({{ t('message_available') }}-
+
+        <span class="time-left"> {{ secondsLeft() }}) </span>
+      </p>
+      }
+    </div>
+  </section>
+</ng-container>

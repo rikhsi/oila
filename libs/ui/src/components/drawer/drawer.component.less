@@ -1,0 +1,44 @@
+@import 'colors';
+@import 'mixins';
+
+.drawer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .top {
+        padding: 30px;
+    }
+
+    .back {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: @ui-pink-1;
+        color: @ui-white-1;
+        border: none;
+        box-shadow: none;
+        transition: all 0.3s;
+
+        &:hover {
+            background: fade(@ui-pink-1, 70%);
+        }
+    }
+
+    .content {
+        flex: 1 1 auto;
+        padding: 30px;
+        padding-top: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .scrollbar-mixin();
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+        padding: 30px;
+    }
+}

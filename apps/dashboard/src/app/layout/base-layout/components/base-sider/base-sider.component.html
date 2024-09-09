@@ -1,0 +1,71 @@
+<ng-container *transloco="let t">
+    <ul 
+        nz-menu 
+        nzTheme="light"
+        nzMode="inline"
+        [nzInlineCollapsed]="isCollapsed()"
+    >
+        @for (item of navigation; track item.title) {
+            @if (!!item?.groupName) {
+                <ng-container *uiPermission="item?.permissions">
+                    <li nz-menu-group [nzTitle]="t(item.groupName)">
+                        <ul>
+                            <ng-container 
+                                [ngTemplateOutlet]="soloRef"
+                                [ngTemplateOutletContext]="{ item }">
+                            </ng-container>
+                        </ul>
+                    </li>
+                </ng-container>
+            } @else {
+                <ng-container *uiPermission="item?.permissions">
+                    <ng-container 
+                        [ngTemplateOutlet]="soloRef"
+                        [ngTemplateOutletContext]="{ item }">
+                    </ng-container>
+                </ng-container>
+            }
+        }
+
+        <ng-template #soloRef let-item="item">
+            @switch (item?.type) {
+                @case ('multiple') {
+                    <ng-container *uiPermission="item?.permissions">
+                        <li 
+                            nz-submenu 
+                            [nzIcon]="item?.icon"
+                            [nzTitle]="t(item?.title)"
+                        >
+                            <ul>
+                                @for (child of item.children; track child.title) {
+                                    <ng-container *uiPermission="child?.permissions">
+                                        <ng-container 
+                                            [ngTemplateOutlet]="soloRef"
+                                            [ngTemplateOutletContext]="{ item: child }">
+                                        </ng-container>
+                                    </ng-container>
+                                }
+                            </ul>      
+                        </li>
+                    </ng-container>
+                }
+                @default {
+                    <ng-container *uiPermission="item?.permissions">
+                        <li 
+                            nz-menu-item 
+                            [nzMatchRouter]="true"
+                            [routerLink]="item.url"
+                        > 
+                            <span 
+                                nz-icon
+                                [nzType]="item?.icon">
+                            </span>
+            
+                            <span>{{t(item.title)}}</span>
+                        </li>
+                    </ng-container>
+                }
+            }
+        </ng-template>
+    </ul>
+</ng-container>

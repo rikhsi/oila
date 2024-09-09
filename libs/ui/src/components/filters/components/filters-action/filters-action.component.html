@@ -1,0 +1,17 @@
+<ng-container *transloco="let t">
+    <div class="filters-action">
+        <button 
+            nz-button
+            [nzType]="'primary'"
+            [nzSize]="'large'"
+            (click)="openDrawer.emit()"
+            class="filter"
+        >
+            {{t('filter.name')}}
+
+            <nz-badge [nzDot]="isDot()">
+                <span nz-icon nzType="filter"></span>
+            </nz-badge>
+        </button>
+    </div>
+</ng-container>

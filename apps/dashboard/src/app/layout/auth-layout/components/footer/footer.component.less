@@ -1,0 +1,31 @@
+@import 'colors';
+@import 'mixins';
+
+.footer {
+  width: 100vw;
+  padding: 24px 0;
+  background: @ui-white-1;
+
+  .wrapper-mixin();
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 12px;
+
+    .container-mixin();
+  }
+
+  .copyright {
+    color: @ui-grey-3;
+
+    .text-mixin(500,12px,115%);
+  }
+
+  .phone {
+    padding: 0;
+    vertical-align: middle;
+    .text-mixin(600,16px,auto);
+  }
+}

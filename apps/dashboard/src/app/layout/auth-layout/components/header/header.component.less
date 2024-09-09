@@ -1,0 +1,53 @@
+@import 'colors';
+@import 'mixins';
+
+.header {
+    width: 100vw;
+    padding: 12px 0;
+
+    .wrapper-mixin();
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .container-mixin();
+    }
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    column-gap: 42px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    .language {
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
+        text-transform: uppercase;
+
+        .text-mixin(700,16px,auto);
+
+        [nz-icon] {
+            margin: 0;
+            font-size: 12px;
+            line-height: 1px;
+        }
+    }
+}
+
+[nz-menu-item] {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    
+    .text-mixin(700,16px,auto);
+}

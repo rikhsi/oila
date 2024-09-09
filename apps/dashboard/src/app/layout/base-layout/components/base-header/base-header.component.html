@@ -1,0 +1,16 @@
+<header class="base-header">
+  <div class="breadcrumb">
+    <button nz-button nzType="primary" (click)="toggleMenu()">
+      <span class="trigger" nz-icon [nzType]="toggleIcon()"></span>
+    </button>
+
+    <ui-breadcrumb class="breadcrumb"></ui-breadcrumb>
+  </div>
+
+  <div class="actions">
+    <button nz-button nzType="primary" (click)="logout()">
+      <span nz-icon nzType="logout" nzTheme="outline"></span>
+      <span>{{ 'logout' | transloco }}</span>
+    </button>
+  </div>
+</header>

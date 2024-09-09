@@ -1,0 +1,29 @@
+@import 'mixins';
+@import 'colors';
+
+.logo {
+    display: flex;
+    column-gap: 8px;
+    align-items: flex-end;
+    width: auto;
+    height: auto;
+    padding: 2px;
+    white-space: wrap;
+    text-align: start;
+
+    .brand {
+        color: @ui-pink-1;
+        overflow: hidden;
+        
+        .text-mixin(900,44px,100%);
+    }
+
+    .description {
+        position: relative;
+        bottom: 4px;
+        max-width: 90px;
+        color: @ui-black-1;
+
+        .text-mixin(500,11px,120%);
+    }
+}

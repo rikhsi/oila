@@ -1,0 +1,19 @@
+<a 
+    nz-button 
+    nzType="text" 
+    (click)="clicked.emit()"
+    class="logo"
+>
+    <span 
+        [@shrinkText]="isCollapsed()"
+        class="brand"
+    >
+        Oila
+    </span>
+    
+    @if (isInfo() && !isCollapsed()) {
+        <span class="description">
+            {{'Все для вашей свадьбы' | transloco}}
+        </span>
+    }
+</a>
