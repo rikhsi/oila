@@ -3,6 +3,12 @@ import { ModuleFederationConfig } from '@nx/webpack';
 const config: ModuleFederationConfig = {
   name: 'dashboard',
   remotes: [],
+  shared: () => {
+    return {
+      singleton: true,
+      strictVersion: true,
+    };
+  },
   additionalShared: [
     {
       libraryName: '@angular/cdk',
@@ -74,6 +80,22 @@ const config: ModuleFederationConfig = {
     },
     {
       libraryName: '@ant-design/icons-angular',
+      sharedConfig: { singleton: true, eager: true },
+    },
+    {
+      libraryName: 'gridstack/dist/angular',
+      sharedConfig: { singleton: true },
+    },
+    {
+      libraryName: 'ng-zorro-antd/button',
+      sharedConfig: { singleton: true, eager: true },
+    },
+    {
+      libraryName: 'ng-zorro-antd/menu',
+      sharedConfig: { singleton: true, eager: true },
+    },
+    {
+      libraryName: 'ng-zorro-antd/dropdown',
       sharedConfig: { singleton: true, eager: true },
     },
   ],

@@ -63,6 +63,10 @@ const config: ModuleFederationConfig = {
       sharedConfig: { singleton: true, eager: true },
     },
     {
+      libraryName: 'ng-zorro-antd/button',
+      sharedConfig: { singleton: true, eager: true },
+    },
+    {
       libraryName: 'ngx-mask',
       sharedConfig: { singleton: true, eager: true },
     },
@@ -78,7 +82,25 @@ const config: ModuleFederationConfig = {
       libraryName: '@ant-design/icons-angular',
       sharedConfig: { singleton: true, eager: true },
     },
+    {
+      libraryName: 'gridstack/dist/angular',
+      sharedConfig: { singleton: true },
+    },
+    {
+      libraryName: 'ng-zorro-antd/menu',
+      sharedConfig: { singleton: true, eager: true },
+    },
+    {
+      libraryName: 'ng-zorro-antd/dropdown',
+      sharedConfig: { singleton: true, eager: true },
+    },
   ],
+  shared: () => {
+    return {
+      singleton: true,
+      strictVersion: true,
+    };
+  },
 };
 
 export default config;
