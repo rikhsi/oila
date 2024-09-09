@@ -9,6 +9,14 @@ const config: ModuleFederationConfig = {
       sharedConfig: { singleton: true, eager: true },
     },
     {
+      libraryName: '@oila/config',
+      sharedConfig: { singleton: true, eager: true, requiredVersion: false },
+    },
+    {
+      libraryName: '@oila/ui',
+      sharedConfig: { singleton: true, eager: true, requiredVersion: false },
+    },
+    {
       libraryName: '@angular/animations',
       sharedConfig: { singleton: true, eager: true },
     },
